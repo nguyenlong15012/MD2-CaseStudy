@@ -1,15 +1,16 @@
 package com.company.controller;
 
+import com.company.model.Album;
 import com.company.model.Song;
 import com.company.service.Song.ISongServiceIMPL;
 
 import java.util.List;
 
 public class SongController {
-    ISongServiceIMPL albumServiceIMPL = new ISongServiceIMPL();
+    ISongServiceIMPL iSongServiceIMPL = new ISongServiceIMPL();
 
     public List<Song> showListSong() {
-        return albumServiceIMPL.findAll();
+        return iSongServiceIMPL.findAll();
     }
 
     public void writetoSong(Song songDTO) {
@@ -19,7 +20,12 @@ public class SongController {
 //        }else {
 //            id = ISongServiceIMPL.songList.get(ISongServiceIMPL.songList.size()-1).getMaCD()+1;
 //        }
-        albumServiceIMPL.save(songDTO);
-        albumServiceIMPL.findAll();
+        iSongServiceIMPL.save(songDTO);
+        iSongServiceIMPL.findAll();
+    }
+
+
+    public List<Song> showListSongByUser(){
+        return iSongServiceIMPL.findByUser();
     }
 }

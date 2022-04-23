@@ -29,4 +29,7 @@ public class AlbumController {
         iAlbumServiceIMPL.save(album);
         iAlbumServiceIMPL.findAll();
     }
+    public List<Album> showListAlbumByUser(){
+        return iAlbumServiceIMPL.findByUser();
+    }
 }

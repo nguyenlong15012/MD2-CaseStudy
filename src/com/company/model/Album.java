@@ -7,8 +7,17 @@ public class Album implements Serializable {
     private String tenAlbum;
     private String caSiAlbum;
     private String hinhAnhAlbum;
+    private User user;
 
     public Album() {
+    }
+
+    public Album(int id, String tenAlbum, String caSiAlbum, String hinhAnhAlbum, User user) {
+        this.id = id;
+        this.tenAlbum = tenAlbum;
+        this.caSiAlbum = caSiAlbum;
+        this.hinhAnhAlbum = hinhAnhAlbum;
+        this.user = user;
     }
 
     public Album(String tenAlbum, String caSiAlbum) {
@@ -29,6 +38,13 @@ public class Album implements Serializable {
         this.caSiAlbum = caSiAlbum;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public int getId() {
         return id;
@@ -69,18 +85,17 @@ public class Album implements Serializable {
                 ", tenAlbum='" + tenAlbum + '\'' +
                 ", caSiAlbum='" + caSiAlbum + '\'' +
                 ", hinhAnhAlbum='" + hinhAnhAlbum + '\'' +
+                ", user=" + user +
                 '}'+"\n";
     }
 
-    public void hienThiAlbum() {
-        System.out.printf("%-10d %-20s %-20s %-10d \n", id, tenAlbum, caSiAlbum, hinhAnhAlbum);
-    }
-
-//    public String hienAlbum(){
+    //    @Override
+//    public String toString() {
 //        return "Album{" +
 //                "id=" + id +
 //                ", tenAlbum='" + tenAlbum + '\'' +
 //                ", caSiAlbum='" + caSiAlbum + '\'' +
+//                ", hinhAnhAlbum='" + hinhAnhAlbum + '\'' +
 //                '}'+"\n";
 //    }
 }

@@ -2,7 +2,10 @@ package com.company.service.Album;
 
 import com.company.config.ConfigReadAndWriteFile;
 import com.company.model.Album;
+import com.company.model.User;
+import com.company.service.user_principal.UserPrincipalServiceIMPL;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class IAlbumServiceIMPL implements IAlbumService{
@@ -16,7 +19,10 @@ public class IAlbumServiceIMPL implements IAlbumService{
 
     @Override
     public void save(Album album) {
+        User user = UserPrincipalServiceIMPL.getInstance().getCurrentUser();
+        album.setUser(user);
         albumList.add(album);
+        //new ConfigReadAndWriteFile<Album>().writeToFile(PATH_ALBUM, albumList);
     }
 
     @Override
@@ -24,6 +30,21 @@ public class IAlbumServiceIMPL implements IAlbumService{
         return null;
     }
 
+    @Override
+    public List<Album> findByUser() {
+        //System.out.println("goi ham findByUser");
+        List<Album> albumListByUser = new ArrayList<>();
+        albumListByUser.clear();
+        //System.out.println("check current"+new UserPrincipalServiceIMPL().getCurrentUser().getUsername());
+        for (int i = 0; i < albumList.size(); i++) {
+            //System.out.println("i ==== "+i);
+            //System.out.println("check ---> "+new UserPrincipalServiceIMPL().getCurrentUser().getUsername().equals(albumList.get(i).getUser().getUsername()));
+            if(new UserPrincipalServiceIMPL().getCurrentUser().getUsername().equals(albumList.get(i).getUser().getUsername())){
+                albumListByUser.add(albumList.get(i));
+            }
+        }
+        return albumListByUser;
+    }
 
 
 //    @Override

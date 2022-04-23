@@ -98,6 +98,6 @@ public class User implements Serializable {
                 ", email='" + email + '\'' +
                 ", avatar='" + avatar + '\'' +
                 ", roleSet=" + roleSet +
-                '}';
+                '}'+"\n";
     }
 }

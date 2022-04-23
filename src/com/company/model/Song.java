@@ -6,22 +6,39 @@ public class Song implements Serializable {
     private int maCD;
     private String tenCD;
     private String caSy;
-    private int soBH;
+    private int idAlbum;
+    private User user;
 
     public Song() {
     }
 
-    public Song(int maCD, String tenCD, String caSy, int soBH) {
+    public Song(int maCD, String tenCD, String caSy, int idAlbum, User user) {
         this.maCD = maCD;
         this.tenCD = tenCD;
         this.caSy = caSy;
-        this.soBH = soBH;
+        this.idAlbum = idAlbum;
+        this.user = user;
+    }
+
+    public Song(int maCD, String tenCD, String caSy, int idAlbum) {
+        this.maCD = maCD;
+        this.tenCD = tenCD;
+        this.caSy = caSy;
+        this.idAlbum = idAlbum;
 
     }
 
     public Song(String name, String casi) {
         this.tenCD = name;
         this.caSy = casi;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public int getMaCD() {
@@ -49,25 +66,33 @@ public class Song implements Serializable {
     }
 
     public int getSoBH() {
-        return soBH;
+        return idAlbum;
     }
 
-    public void setSoBH(int soBH) {
-        this.soBH = soBH;
+    public void setSoBH(int idAlbum) {
+        this.idAlbum = idAlbum;
     }
-
 
     @Override
     public String toString() {
-        return "Album{" +
+        return "Song{" +
                 "maCD=" + maCD +
                 ", tenCD='" + tenCD + '\'' +
                 ", caSy='" + caSy + '\'' +
-                ", soBH=" + soBH +
-                '}' + "\n";
+                ", idAlbum=" + idAlbum +
+                ", user=" + user +
+                '}';
     }
 
-    public void hienThiAlbum(){
-        System.out.printf("%-10d %-20s %-20s %-10d \n",maCD, tenCD, caSy, soBH);
-    }
+    //    @Override
+//    public String toString() {
+//        return "Album{" +
+//                "maCD=" + maCD +
+//                ", tenCD='" + tenCD + '\'' +
+//                ", caSy='" + caSy + '\'' +
+//                ", soBH=" + soBH +
+//                '}' + "\n";
+//    }
+
+
 }
