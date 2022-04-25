@@ -80,13 +80,7 @@ public class Album implements Serializable {
 
     @Override
     public String toString() {
-        return "Album{" +
-                "id=" + id +
-                ", tenAlbum='" + tenAlbum + '\'' +
-                ", caSiAlbum='" + caSiAlbum + '\'' +
-                ", hinhAnhAlbum='" + hinhAnhAlbum + '\'' +
-                ", user=" + user +
-                '}'+"\n";
+        return String.format("\tID: %1s %1s TenAlbum: %25s %1s CaSiAlbum %13s %1s HinhAnhAlbum %2s %1s User: %20s", id, "|",tenAlbum,"|",caSiAlbum,"|",hinhAnhAlbum,"|",user);
     }
 
     //    @Override

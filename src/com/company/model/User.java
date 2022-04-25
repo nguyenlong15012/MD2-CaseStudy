@@ -90,14 +90,13 @@ public class User implements Serializable {
 
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", avatar='" + avatar + '\'' +
-                ", roleSet=" + roleSet +
-                '}'+"\n";
+        return "USER [id =" +id + "\t"+ "&" +"\t"+
+                name +"\t"+ "&" +"\t"+
+                 username +"\t"+ "&" +"\t"+
+                password +"\t"+ "&" +"\t"+
+                email +"\t"+ "&" +"\t"+
+                avatar +"\t"+ "&" +"\t"+
+                roleSet +"\t"+ "&" +"\t"+
+                ']'+"\n";
     }
 }

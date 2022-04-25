@@ -75,13 +75,14 @@ public class Song implements Serializable {
 
     @Override
     public String toString() {
-        return "Song{" +
-                "maCD=" + maCD +
-                ", tenCD='" + tenCD + '\'' +
-                ", caSy='" + caSy + '\'' +
-                ", idAlbum=" + idAlbum +
-                ", user=" + user +
-                '}';
+        return String.format("\tID: %1s %1s TenBH: %25s %1s TenCaSi: %13s %1s ID Album: %2s %1s User: %20s \n", maCD,"|", tenCD,"|", caSy,"|", idAlbum,"|" ,user );
+
+//        return "id = "+ maCD +"\t ||"+ "\t" +
+//               tenCD  +"\t ||"+"\t" +
+//                 caSy  +"\t ||"+"\t" +
+//                "idAlbum ="+idAlbum +"\t $$"+"\t" +
+//                 user +"\n ||"+"\t"
+//                ;
     }
 
     //    @Override

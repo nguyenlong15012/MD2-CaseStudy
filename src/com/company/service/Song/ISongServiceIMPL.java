@@ -33,7 +33,7 @@ public class ISongServiceIMPL implements ISongService {
     public Song findBySongName(String songName) {
         int id = 0;
         for (int i = 0; i < songList.size(); i++) {
-            if (songName.equals(songList.get(i).getTenCD())){
+            if (songName.equalsIgnoreCase(songList.get(i).getTenCD())){
                 id = i;
             }
         }
