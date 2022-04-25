@@ -46,6 +46,25 @@ public class IAlbumServiceIMPL implements IAlbumService{
         return albumListByUser;
     }
 
+    @Override
+    public void findById(int id) {
+        for (int i = 0; i < albumList.size(); i++) {
+            if (id == albumList.get(i).getId()){
+                System.out.println(albumList.get(i));
+            }
+        }
+    }
+
+    @Override
+    public void Delete(int id) {
+        for (int i = 0; i < albumList.size(); i++) {
+            if (id == albumList.get(i).getId()){
+                albumList.remove(i);
+                System.out.println("Delete Successfully");
+            }
+        }
+    }
+
 
 //    @Override
 //    public void save(Album album) {

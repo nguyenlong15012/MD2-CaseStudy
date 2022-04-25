@@ -13,4 +13,6 @@ public interface  IAlbumService extends IServiceGeneric<Album> {
 
     Album finByAlbumName(Album album);
     List<Album> findByUser();
+    void findById(int id);
+    void Delete(int id);
 }

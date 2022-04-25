@@ -32,10 +32,9 @@ public class AddSongView {
             String casi = sc.nextLine();
             System.out.println("Nhap so ID Album: ");
             int idAlbum = sc.nextInt();
-
+            sc.nextLine();
             Song song = new Song(id, name, casi, idAlbum);
             songController.writetoSong(song);
-
             System.out.println("Nhap chu bat ky de tiep tuc! ");
             System.out.println("Nhap 'quit' de quay lai Main ");
             String backMenu = sc.nextLine();

@@ -65,11 +65,11 @@ public class Song implements Serializable {
         this.caSy = caSy;
     }
 
-    public int getSoBH() {
+    public int getIdAlbum() {
         return idAlbum;
     }
 
-    public void setSoBH(int idAlbum) {
+    public void setIdAlbum(int idAlbum) {
         this.idAlbum = idAlbum;
     }
 

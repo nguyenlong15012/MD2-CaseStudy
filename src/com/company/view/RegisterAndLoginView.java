@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class RegisterAndLoginView {
     public RegisterAndLoginView(){
         Scanner scanner=new Scanner(System.in);
-        System.out.println("=============Form Register & Login==============");
+        System.out.println("=======<♥>=======Form Register & Login=======<♥>=======");
         System.out.println("1. Register");
         System.out.println("2. Login");
         int choice1=scanner.nextInt();

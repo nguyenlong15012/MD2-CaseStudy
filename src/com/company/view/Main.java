@@ -12,7 +12,9 @@ import java.util.Set;
 
 public class Main {
     public Main() {
+        System.out.println("======<>======MENU======<>======");
         Scanner sc = new Scanner(System.in);
+
         if (UserPrincipalServiceIMPL.userPrincipalList.size() != 0) {
             System.out.println("3. Show List Role");
             System.out.println("5. My Profile");

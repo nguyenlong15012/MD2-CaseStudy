@@ -23,7 +23,8 @@ public class RegisterView {
         boolean checkUsername;
         while (true){
             username = scanner.nextLine();
-            checkUsername = Pattern.matches("[a-z0-9_-]{6,}",username);
+            checkUsername = Pattern.matches("^[a-z0-9_-]{6,}",username);
+            //^[A-Za-z0-9+_.-]+@(.+)$
             if(!checkUsername){
                 System.err.println("Username Failed! Please try again!");
             }else if(userServiceIMPL.existedByUsername(username)){

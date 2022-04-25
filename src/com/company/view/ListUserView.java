@@ -7,6 +7,7 @@ import java.util.Scanner;
 public class ListUserView {
     Scanner scanner = new Scanner(System.in);
     public ListUserView(){
+        System.out.println("===<>===Danh sach tai khoan===<>===");
         System.out.println(UserServiceIMPL.userList);
         System.out.println("Enter quit to back MENU: ");
         String backMenu = scanner.nextLine();

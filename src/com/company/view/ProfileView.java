@@ -13,7 +13,7 @@ public class ProfileView {
     UserPrincipalServiceIMPL userPrincipalServiceIMPL = new UserPrincipalServiceIMPL();
     public ProfileView(){
         if(userPrincipalList.size()!=0){
-            System.out.println("Welcome Profile: "+userPrincipalList.get(0).getName());
+            System.out.println("Welcome Profile: ♥♥♥"+userPrincipalList.get(0).getName()+"♥♥♥");
             System.out.println("1. LOG OUT");
         } else {
             System.out.println("Please Login! ");
