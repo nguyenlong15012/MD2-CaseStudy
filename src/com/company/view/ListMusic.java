@@ -2,6 +2,7 @@ package com.company.view;
 
 
 import com.company.controller.SongController;
+import com.company.model.SongName;
 import com.company.service.Song.ISongServiceIMPL;
 
 import java.util.Scanner;
@@ -19,11 +20,28 @@ public class ListMusic {
 //            new ListAlbum();
 //        }
 //    }
+//    public void findByName(SongName songName){
+//        System.out.println("Bai hat can tim la");
+//
+//    }
 
     public void showListSongByUser() {
         System.out.println(songController.showListSongByUser());
-        System.out.println("===<>===Xóa bài hát theo id===<>===");
+        System.out.println("Nhap bai hat can tim");
+        String songName = sc.nextLine();
+        boolean check = true;
+        for (int i = 0; i <ISongServiceIMPL.songList.size(); i++) {
+            if (songName.equalsIgnoreCase(ISongServiceIMPL.songList.get(i).getTenCD()) ){
+                check = false;
+            }
+        }
+        if (check){
+            System.out.println("Khong tim thay bai hat ban can tim! ");
+            showListSongByUser();
+        }
+        System.out.println(new ISongServiceIMPL().findBySongName(songName));
 
+        System.out.println("===<>===Xóa bài hát theo id===<>===");
         int choice = sc.nextInt();
         new ISongServiceIMPL().Delete(choice);
 //        switch (choice) {

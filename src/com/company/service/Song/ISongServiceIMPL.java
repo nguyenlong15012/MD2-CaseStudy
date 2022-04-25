@@ -1,14 +1,10 @@
 package com.company.service.Song;
 
 import com.company.config.ConfigReadAndWriteFile;
-import com.company.controller.AlbumController;
-import com.company.model.Album;
 import com.company.model.Song;
-import com.company.model.SongName;
 import com.company.model.User;
 import com.company.service.Album.IAlbumServiceIMPL;
 import com.company.service.user_principal.UserPrincipalServiceIMPL;
-import com.company.view.Main;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,9 +30,14 @@ public class ISongServiceIMPL implements ISongService {
     }
 
     @Override
-    public Song findBySongName(SongName songName) {
-
-        return null;
+    public Song findBySongName(String songName) {
+        int id = 0;
+        for (int i = 0; i < songList.size(); i++) {
+            if (songName.equals(songList.get(i).getTenCD())){
+                id = i;
+            }
+        }
+        return songList.get(id);
     }
 
     @Override

@@ -10,7 +10,9 @@ import java.util.List;
 public interface ISongService extends IServiceGeneric<Song> {
     void save(Song song);
 
-    Song findBySongName(SongName songName);
+    //Song findBySongName(SongName songName);
+
+    Song findBySongName(String songName);
 
     void findByIdAlbum(int idAlbum);
 
